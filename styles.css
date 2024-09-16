@@ -1,0 +1,256 @@
+:root {
+    --primary-color : #004230;
+    --secondary-color : #b79b5b;
+    --heading-font: 'Playfair Display', serif;
+    --paragraph-font: 'Alice', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    background: var(--primary-color) url(https://images.getbento.com/accounts/9369d1608733cc0f8c8c822b7fee921c/media/images/1028interior_stories.jpg?w=1400&fit=max&auto=compress,format) no-repeat center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #e3e3e353;
+    backdrop-filter: blur(3px);
+    width: 60%;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 25px -12px rgba(12,28,5,1);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    height: 3em;
+    margin-top: 8px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid;
+    font-family: var(--paragraph-font);
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: 200ms;
+}
+
+/*
+ * Styling for Menu Page.
+ */
+
+.menu {
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    min-height: 100vh;
+    width: 100%;
+}
+
+.menu-category {
+    font-family: 'Dancing Script', cursive;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: -20px;
+    /* mix-blend-mode:color-dodge; */
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 20px 0px 20px;
+    padding-bottom: 30px;
+}
+
+.menu-item {
+    height: 280px;
+    width: 250px;
+    margin: 5px;
+    background-color: #e3e3e326;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 1px 1px 25px -15px rgba(12,28,5,1);
+}
+
+.menu-item img {
+    width: 230px;
+    min-height: 185px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.menu-item button {
+    width: 70%;
+}
+
+/*
+* Styling for About page.
+*/
+
+.about {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.about h1, .about h2 {
+    font-family: var(--heading-font);
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.about p {
+    font-family: var(--paragraph-font);
+    text-align: center;
+    color: var(--secondary-color);
+    padding: 20px 25px 20px 25px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+.icon-container img:last-child {
+    transform: scaleX(-1);
+}
+
+
+/*
+* Contact us Page Styling
+*/
+
+.holder {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grad-box {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    animation: moove 3s ease-in-out infinite alternate;
+}
+
+.content-box {
+    position: absolute;
+    z-index: 99;
+    height: auto;
+    width: 50%;
+    padding: 40px;
+
+}
+
+.content-box h2 {
+    font-family: var(--heading-font);
+    text-align: center;
+    color: var(--primary-color);
+    padding-bottom: 15px;
+}
+
+form {
+    width: 100%;
+}
+
+input, textarea {
+    font-family: var(--paragraph-font);
+    width: 100%;
+    padding: 0.6em;
+    margin-top: 1em;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    resize: none;
+}
+:focus {
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+::placeholder {
+    color : var(--primary-color);
+}
+
+@keyframes moove {
+    0% {
+        transform: scale(2.5);
+    }
+    100% {
+        transform: scale(1);
+        /* transform: scaleX(4); */
+    }
+}
+
+/*
+* Experiments 🧪
+*/
+
+/* .about {
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    background-clip: text;
+}
+
+.about p, .about h1, .about h2 {
+    color: transparent;
+    background-clip: text;
+} */
+
+.curtain {
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+    /* background: #e3e3e326; */
+    bottom: 0; left: 0;
+    opacity: 0.4;
+    animation: slide-left 5s ease-in-out 1;
+}
+
+@keyframes slide-left {
+    0% {
+       width: 100%;
+    }
+    50% {
+        width: 0;
+    }
+    /* 100% {
+        width: 100%;
+    } */
+}
+
+/* https://github.com/praveen8git */
+
+
